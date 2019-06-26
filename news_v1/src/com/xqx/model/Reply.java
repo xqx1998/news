@@ -1,16 +1,32 @@
 package com.xqx.model;
 
+/**
+ * 回复 实体类
+ */
 public class Reply {
     private int reply_id;     //评论或回复id
     private int reply_news_id; //评论的发帖id
     private int reply_user_id; //评论者id
-    private int reply_level;    //
-    private int reply_reply_id;
-    private String reply_time;
-    private String reply_content;
+    private int reply_level;    //评论级别
+    private int reply_reply_id; //评论的评论id
+    private String reply_time;  //评论时间
+    private String reply_content;   //评论内容
 
+    /**
+     * 无参构造方法
+     */
     public Reply() {}
 
+    /**
+     *
+     * @param reply_id
+     * @param reply_news_id
+     * @param reply_user_id
+     * @param reply_level
+     * @param reply_reply_id
+     * @param reply_time
+     * @param reply_content
+     */
     public Reply(int reply_id, int reply_news_id, int reply_user_id, int reply_level, int reply_reply_id, String reply_time, String reply_content) {
         this.reply_id = reply_id;
         this.reply_news_id = reply_news_id;
@@ -21,6 +37,10 @@ public class Reply {
         this.reply_content = reply_content;
     }
 
+    /**
+     *
+     * @return int
+     */
     public int getReply_id() {
         return reply_id;
     }
@@ -77,6 +97,10 @@ public class Reply {
         this.reply_content = reply_content;
     }
 
+    /**
+     *
+     * @return String
+     */
     @Override
     public String toString() {
         return "Reply{" +
