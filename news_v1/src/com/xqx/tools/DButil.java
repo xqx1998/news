@@ -11,38 +11,7 @@ import config.DBConfig;
  * @Description：
  */
 public class DButil extends DBConfig {
-//    private static String driver = "com.mysql.cj.jdbc.Driver";
-//    private static String dburl = "jdbc:mysql://47.106.141.114:3306/news?useSSL=true&serverTimezone=GMT";
-//    private static String user = "xqx";
-//    private static String password = "19980510";
     Connection conn=null;
-//    private static String driver;
-//    private static String dburl;
-//    private static String user;
-//    private static String password;
-//
-//
-//
-//    static {
-//        //用来保存属性文件中的键值对
-//            Properties prop = new Properties();
-//            FileReader fr = null;
-//        InputStream in = DButil.class.getResourceAsStream("");
-//            try {
-//                //fr = new FileReader("C:\\Users\\ASDS\\Desktop\\class1.txt");
-////                fr = new FileReader("dbconfig.properties");
-//                prop.load(fr); //从dbconfig.properties文件中获取键值对
-//                fr.close();
-//            } catch (Exception e) {
-//                System.out.println("=======配置文件读取错误=======");
-//            }
-//
-//        //将所读取到的值赋值给成员变量
-//        driver=prop.getProperty("driver");
-//        dburl=prop.getProperty("dburl");
-//        user=prop.getProperty("user");
-//        password=prop.getProperty("password");
-//        System.out.println(driver);
     static {
     System.out.println(USER);
         try {
