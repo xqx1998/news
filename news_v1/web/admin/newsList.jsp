@@ -1,11 +1,11 @@
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="com.xqx.model.News" %><%--
-  User: xqx
+<%@ page import="com.cyw.model.News" %><%--
+  User: cyw
   Date: 2019/6/7
   Time: 20:54
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<jsp:useBean id="newsDaoImpl" class="com.xqx.dao.impl.NewsDaoImpl" scope="page"></jsp:useBean>
+<jsp:useBean id="newsDaoImpl" class="com.cyw.dao.impl.NewsDaoImpl" scope="page"></jsp:useBean>
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8">

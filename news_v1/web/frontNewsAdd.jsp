@@ -5,8 +5,8 @@
 --%>
 <%@ page language="java" pageEncoding="UTF-8"%>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="com.xqx.model.Topic" %>
-<jsp:useBean id="topicDaoImpl" class="com.xqx.dao.impl.TopicDaoImpl" scope="page">
+<%@ page import="com.cyw.model.Topic" %>
+<jsp:useBean id="topicDaoImpl" class="com.cyw.dao.impl.TopicDaoImpl" scope="page">
 
 </jsp:useBean>
 <%

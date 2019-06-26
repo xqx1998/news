@@ -1,11 +1,11 @@
-<%@ page import="com.xqx.model.Topic" %>
+<%@ page import="com.cyw.model.Topic" %>
 <%@ page import="java.util.ArrayList" %><%--
-  User: xqx
+  User: cyw
   Date: 2019/6/11
   Time: 9:26
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<jsp:useBean id="topicDaoImpl" class="com.xqx.dao.impl.TopicDaoImpl" scope="page"></jsp:useBean>
+<jsp:useBean id="topicDaoImpl" class="com.cyw.dao.impl.TopicDaoImpl" scope="page"></jsp:useBean>
 
 <html>
 <head>

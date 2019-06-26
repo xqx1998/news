@@ -1,18 +1,18 @@
-<%@ page import="com.xqx.model.News" %>
+<%@ page import="com.cyw.model.News" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="com.xqx.model.Reply" %>
-<%@ page import="com.xqx.model.User" %><%--
+<%@ page import="com.cyw.model.Reply" %>
+<%@ page import="com.cyw.model.User" %><%--
   Created by IntelliJ IDEA.
-  User: xqx
+  User: cyw
   Date: 2019/5/13
   Time: 17:01
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<jsp:useBean id="newsDaoImpl" class="com.xqx.dao.impl.NewsDaoImpl" scope="page"></jsp:useBean>
-<%--<jsp:useBean id="topicDaoImpl" class="com.xqx.dao.impl.TopicDaoImpl" scope="page"></jsp:useBean>--%>
-<jsp:useBean id="replyDaoImpl" class="com.xqx.dao.impl.ReplyDaoImpl" scope="page"></jsp:useBean>
-<jsp:useBean id="userDaoImpl" class="com.xqx.dao.impl.UserDaoImpl" scope="page"></jsp:useBean>
+<jsp:useBean id="newsDaoImpl" class="com.cyw.dao.impl.NewsDaoImpl" scope="page"></jsp:useBean>
+<%--<jsp:useBean id="topicDaoImpl" class="com.cyw.dao.impl.TopicDaoImpl" scope="page"></jsp:useBean>--%>
+<jsp:useBean id="replyDaoImpl" class="com.cyw.dao.impl.ReplyDaoImpl" scope="page"></jsp:useBean>
+<jsp:useBean id="userDaoImpl" class="com.cyw.dao.impl.UserDaoImpl" scope="page"></jsp:useBean>
 <%
 
 %>
