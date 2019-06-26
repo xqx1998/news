@@ -4,15 +4,20 @@ package com.xqx.model;
  * @author xqx
  * @fileName:
  * @Date 2019/5/20 10:21
- * @Package_Name:
+ * @Package_Name: 主题实体类
  */
 public class Topic {
-    private int topic_id;
-    private String topic_name;
+    private int topic_id; //主题id
+    private String topic_name; //主题名称
 
     public Topic() {
     }
 
+    /**
+     *
+     * @param topic_id
+     * @param topic_name
+     */
     public Topic(int topic_id, String topic_name) {
         this.topic_id = topic_id;
         this.topic_name = topic_name;

@@ -12,15 +12,19 @@ import config.DBConfig;
  */
 public class DButil extends DBConfig {
     Connection conn=null;
+    // 创建静态代码块 加载数据库驱动类
     static {
-    System.out.println(USER);
         try {
-//            Class.forName(driver);
             Class.forName(DRIVER);
         }catch (ClassNotFoundException e){
             System.out.println("找不到驱动类！");
         }
     }
+
+    /**
+     * 获取数据库连接
+     * @return Connection
+     */
     public Connection getConnection() {
         try {
             conn = DriverManager.getConnection(DBURL,USER,PASSWORD);
@@ -34,6 +38,12 @@ public class DButil extends DBConfig {
         return conn;
     }
 
+    /**
+     * 关闭数据库连接
+     * @param rs
+     * @param ps
+     * @param conn
+     */
     public void close(ResultSet rs, PreparedStatement ps, Connection conn){
         try {
             if(rs!=null){
@@ -51,6 +61,10 @@ public class DButil extends DBConfig {
 
     }
 
+    /**
+     * 测试数据库连接是否成功
+     * @param args
+     */
     public static void main(String[] args) {
         new DButil().getConnection();
     }

@@ -12,66 +12,79 @@ import java.util.ArrayList;
  */
 public interface NewsDao {
     /**
-     * 添加，修改新闻
+     * 添加，修改发帖
      * @param news
-     * @return
+     * @return int
      */
     public int newsAdd_Update(News news);
 
     /**
-     * 添加新闻
+     * 添加发帖
      * @param news
-     * @return
+     * @return int
      */
     public int newsAdd(News news);
 
     /**
-     * 修改新闻信息
+     * 修改发帖信息
      * @param news
-     * @return
+     * @return int
      */
     public int newsUpdate(News news);
 
     /**
-     * 查询指定id新闻信息
+     * 查询指定id发帖信息
      * @param news_id
-     * @return
+     * @return News
      */
     public News newsSelect(int news_id);
 
+    /**
+     * 查询最新首条发帖
+     * @return News
+     */
     public News newsSelectEnd();
 
     /**
-     * 查询所有新闻
-     * @return
+     * 查询所有发帖
+     * @return ArrayList<News>
      */
     public ArrayList<News> newsSelectAll();
 
+    /**
+     *
+     * @param sql
+     * @return ArrayList<News>
+     */
     public ArrayList<News> newsSelectList(String sql);
 
     /**
-     * 模糊查询含有新闻关键字的新闻
+     * 模糊查询含有发帖关键字的发帖
      * 方法1.把查询留给数据库
      * 方法2.把查询留给服务器
      * @param keyword
-     * @return
+     * @return  ArrayList<News>
      */
     public ArrayList<News> newsDeatailsSelect(String keyword);
 
 
     /**
-     * 删除新闻
+     * 删除发帖
      * @param news_id
-     * @return
+     * @return int
      */
     public int newsDelete(int news_id);
 
     /**
-     * 同时删除多个新闻
+     * 同时删除多个发帖
      * @param id_list
-     * @return
+     * @return int
      */
     public int newsDeleteMore(ArrayList<Integer> id_list);
 
+    /**
+     *
+     * @return
+     */
     public int newsCount();
 }
