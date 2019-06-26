@@ -1,15 +1,15 @@
-<%@ page import="com.cyw.model.News" %>
+<%@ page import="com.xqx.model.News" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="com.cyw.model.Topic" %><%--
+<%@ page import="com.xqx.model.Topic" %><%--
   Created by IntelliJ IDEA.
-  User: cyw
+  User: xqx
   Date: 2019/5/13
   Time: 17:01
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<jsp:useBean id="newsDaoImpl" class="com.cyw.dao.impl.NewsDaoImpl" scope="page"></jsp:useBean>
-<jsp:useBean id="topicDaoImpl" class="com.cyw.dao.impl.TopicDaoImpl" scope="page"></jsp:useBean>
+<jsp:useBean id="newsDaoImpl" class="com.xqx.dao.impl.NewsDaoImpl" scope="page"></jsp:useBean>
+<jsp:useBean id="topicDaoImpl" class="com.xqx.dao.impl.TopicDaoImpl" scope="page"></jsp:useBean>
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8">

@@ -22,7 +22,7 @@
 	</servlet-mapping>
 	<servlet>
 		<servlet-name>LoginRegister</servlet-name>
-		<servlet-class>com.cyw.servlet.LoginRegistServlet</servlet-class>
+		<servlet-class>com.xqx.servlet.LoginRegistServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>LoginRegister</servlet-name>
@@ -30,7 +30,7 @@
 	</servlet-mapping>
 	<servlet>
 		<servlet-name>NewsReleaseServlet</servlet-name>
-		<servlet-class>com.cyw.servlet.NewsReleaseServlet</servlet-class>
+		<servlet-class>com.xqx.servlet.NewsReleaseServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>NewsReleaseServlet</servlet-name>
@@ -38,7 +38,7 @@
 	</servlet-mapping>
 	<servlet>
 		<servlet-name>NewsUpdateServlet</servlet-name>
-		<servlet-class>com.cyw.servlet.NewsUpdateServlet</servlet-class>
+		<servlet-class>com.xqx.servlet.NewsUpdateServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>NewsUpdateServlet</servlet-name>
@@ -46,7 +46,7 @@
 	</servlet-mapping>
 	<servlet>
 		<servlet-name>NewsDeleteServlet</servlet-name>
-		<servlet-class>com.cyw.servlet.NewsDeleteServlet</servlet-class>
+		<servlet-class>com.xqx.servlet.NewsDeleteServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>NewsDeleteServlet</servlet-name>
