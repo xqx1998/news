@@ -14,7 +14,7 @@ public interface UserDao{
     /**
      * 添加用户
      * @param user
-     * @return int
+     * @return
      */
     public int userAdd(User user);
 
@@ -28,35 +28,35 @@ public interface UserDao{
 
     /**
      * 查询所有用户
-     * @return ArrayList<User>
+     * @return
      */
     public ArrayList<User> userSelectAll();
 
     /**
      * 查询指定id用户详细信息
      * @param id
-     * @return User
+     * @return
      */
     public User userDetailesSelect(int id);
 
     /**
      * 更新用户信息
      * @param user
-     * @return int
+     * @return
      */
     public int userUpdate(User user);
 
     /**
      * 删除用户
      * @param user
-     * @return int
+     * @return
      */
     public int userDelete(User user);
 
     /**
      * 同时删除多个
      * @param id_list
-     * @return int
+     * @return
      */
     public int userDelete(ArrayList<Integer> id_list);
 }

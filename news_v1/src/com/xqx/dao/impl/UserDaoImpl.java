@@ -64,6 +64,7 @@ public class UserDaoImpl extends UserSQL implements UserDao{
         User user = new User(0, "0", "0");
         ResultSet rs = null;
         Connection connection = db.getConnection();
+//        String sql = "select user_id, username, password from user where username = ?";
         PreparedStatement ps = null;
         try {
             ps = connection.prepareStatement(USER_SELECT_NAME);
@@ -114,6 +115,7 @@ public class UserDaoImpl extends UserSQL implements UserDao{
         User user = null;
         ResultSet rs = null;
         Connection connection = db.getConnection();
+       // String sql = "select user_details_id, username, name, sex, phone, email, address from news.user_details where user_details_id = ?";
         PreparedStatement ps = null;
         try {
             ps = connection.prepareStatement(USER_DETAILES_SELECT);

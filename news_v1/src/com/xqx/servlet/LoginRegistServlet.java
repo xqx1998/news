@@ -16,7 +16,7 @@ import java.io.PrintWriter;
  * @fileName:LoginRegistServlet
  * @Date 2019/5/13 20:31
  * @Package_Name: com.xqx.servlet
- * @Description： 用户登录注册处理
+ * @Description：
  */
 public class LoginRegistServlet extends HttpServlet {
     UserControl userControl = new UserControl();

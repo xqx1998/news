@@ -20,14 +20,10 @@ public class UserControl {
      */
     public User login(User user) {
         User user_r = userService.login(user);
+        System.out.println(user_r);
         return user_r;
     }
 
-    /**
-     * 用户注册
-     * @param user
-     * @return int
-     */
     public int register(User user){
         if (1 == userService.regist(user)) {
             return 1;
@@ -37,11 +33,6 @@ public class UserControl {
           return 0;
     }
 
-    /**
-     * 用户详细信息查询
-     * @param id
-     * @return User
-     */
     public User userDetailesSelect(int id) {
         User user_ds = userService.userDetailesSelect(id);
         return user_ds;

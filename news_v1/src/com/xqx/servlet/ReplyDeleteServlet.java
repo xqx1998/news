@@ -4,13 +4,14 @@ import com.xqx.dao.NewsDao;
 import com.xqx.dao.impl.NewsDaoImpl;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-
-public class NewsDeleteServlet extends HttpServlet {
+@WebServlet("/ReplyDeleteServlet")
+public class ReplyDeleteServlet extends HttpServlet {
     NewsDao newsDao = new NewsDaoImpl();
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
@@ -22,7 +23,6 @@ public class NewsDeleteServlet extends HttpServlet {
         resp.setContentType("text/html, charset=utf-8");
         resp.setCharacterEncoding("gbk");
         PrintWriter out = resp.getWriter();
-
         int code = 0;
         // int code = newsDao.userDelete(id0);
         if(1 == code){

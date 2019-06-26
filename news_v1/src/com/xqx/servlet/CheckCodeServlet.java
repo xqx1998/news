@@ -12,9 +12,6 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.Random;
 
-/**
- * 生成验证码
- */
 @WebServlet("/CheckCode")
 public class CheckCodeServlet extends HttpServlet {
     @Override
