@@ -1,4 +1,4 @@
-package com.xqx.model;
+package com.cyw.model;
 
 /**
  * @author xqx

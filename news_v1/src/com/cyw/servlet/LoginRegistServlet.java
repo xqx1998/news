@@ -1,7 +1,7 @@
-package com.xqx.servlet;
+package com.cyw.servlet;
 
-import com.xqx.control.UserControl;
-import com.xqx.model.User;
+import com.cyw.control.UserControl;
+import com.cyw.model.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
