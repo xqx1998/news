@@ -10,7 +10,7 @@ public class Topic {
     private int topic_id;
     private String topic_name;
 
-    public Topic() {11
+    public Topic() {
     }
 
     public Topic(int topic_id, String topic_name) {
