@@ -13,6 +13,10 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+/**
+ * 添加回复处理
+ */
 @WebServlet("/ReplyAddServlet")
 public class ReplyAddServlet extends HttpServlet {
     ReplyDao replyDao = new ReplyDaoImpl();

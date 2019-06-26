@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+/**
+ * ·¢ÌûÉ¾³ý´¦Àí
+ */
 public class NewsDeleteServlet extends HttpServlet {
     NewsDao newsDao = new NewsDaoImpl();
     @Override

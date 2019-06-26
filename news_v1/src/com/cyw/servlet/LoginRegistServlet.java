@@ -1,7 +1,7 @@
-package com.cyw.servlet;
+package com.xqx.servlet;
 
-import com.cyw.control.UserControl;
-import com.cyw.model.User;
+import com.xqx.control.UserControl;
+import com.xqx.model.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -12,11 +12,11 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 /**
- * @author cyw
+ * @author xqx
  * @fileName:LoginRegistServlet
  * @Date 2019/5/13 20:31
- * @Package_Name: com.cyw.servlet
- * @Description：
+ * @Package_Name: com.xqx.servlet
+ * @Description： 用户登录注册处理
  */
 public class LoginRegistServlet extends HttpServlet {
     UserControl userControl = new UserControl();

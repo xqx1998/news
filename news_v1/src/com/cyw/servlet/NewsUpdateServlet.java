@@ -12,6 +12,9 @@ import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ *发帖更新处理
+ */
 public class NewsUpdateServlet extends HttpServlet {
     NewsControl newsControl = new NewsControl();
     @Override

@@ -10,6 +10,12 @@ import com.cyw.service.impl.NewsServiceImpl;
  */
 public class NewsControl {
     NewsService newsService = new NewsServiceImpl();
+
+    /**
+     * 发帖添加功能
+     * @param news
+     * @return
+     */
     public int newsAdd(News news){
         if(1 == newsService.newsAdd(news)){
             return 1;
