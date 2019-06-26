@@ -25,7 +25,7 @@ public class UserDaoImpl extends UserSQL implements UserDao{
 
     @Override
     public int userAdd(User user) {
-        //获取数据库连接
+        //获取数据库连接 题
         Connection connection = db.getConnection();
         //定义用户表插入用户信息sql语句
 //        String sql = "INSERT INTO `news`.`user` (username, password) VALUES ( ?, ?)";
