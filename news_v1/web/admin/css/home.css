@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.top {
+    border: 2px solid #616dff;
+}
+.nav{
+    height: 90%;
+    border: 2px solid #616dff;
+}
+.content{
+    height: 90%;
+    border: 2px solid #616dff;
+}
+.bottom{
+    border: 2px solid #616dff;
+}
+.col-center-block{
+    float: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.text-center{
+    text-align: center;
+}
+.path{
+    border: 2px solid #616dff;
+}

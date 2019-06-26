@@ -10,14 +10,28 @@
 <jsp:useBean id="newsDaoImpl" class="com.cyw.dao.impl.NewsDaoImpl" scope="page" />
 
 <%
+	request.setCharacterEncoding("utf-8");
 	//获取动作
 	String action = request.getParameter("action");
 	if (action != null && "sign_out".equals(action)) {
 		session.removeAttribute("user");
 	}
 	//设置页面显示记录数
-	int pagesize = 8;
-
+	int pagesize = 5;
+	//定义搜索变量
+	String serach = "";
+	//从表单获取搜索内容并赋值 搜索变量
+	serach = request.getParameter("serach");
+	//判断 serach 是否为空
+	if (serach != null && serach.split(" ").length>0)
+	    //不为空则存放到session中
+		session.setAttribute("serach", serach);
+	//
+	String sessionSerach = (String )session.getAttribute("serach");
+	if (sessionSerach !=null && sessionSerach.split(" ").length>0){
+	    serach = sessionSerach;
+	}
+	System.out.println(serach);
 %>
 <html lang="zh-CN">
 <head>
@@ -60,10 +74,10 @@
 					<%
 						String pages = request.getParameter("pages");
 						int pages0 = 0;
-						String sql = "select news_id, news_title, news_topic_id, topic_name, news_time, news_user_id, news_username, news_access from view_news order by news_id desc limit " + pagesize + ";";
+						String sql = "select news_id, news_title, news_topic_id, topic_name, news_time, news_user_id, news_username, news_access from view_news where news_title like '%"+ serach +"%' or topic_name like '%"+ serach +"%' or news_username like '%"+ serach +"%'  order by news_id desc limit " + pagesize + ";";
 						if (pages != null) {
 							pages0 = Integer.valueOf(pages).intValue();
-							sql = "select news_id, news_title, news_topic_id, topic_name, news_time, news_user_id, news_username, news_access from view_news order by news_id desc limit " + (pages0 - 1) * pagesize + ", " + pagesize + ";";
+							sql = "select news_id, news_title, news_topic_id, topic_name, news_time, news_user_id, news_username, news_access from view_news where news_title like '%"+ serach +"%' or topic_name like '%"+ serach +"%' or news_username like '%"+ serach +"%'  order by news_id desc limit " + (pages0 - 1) * pagesize + ", " + pagesize + ";";
 						}
 						ArrayList<News> newsArrayList = newsDaoImpl.newsSelectList(sql);
 						if (newsArrayList.size() > 0) {
@@ -112,7 +126,7 @@
 							<%
 								if (pages0 > 1) {
 							%>
-							<a href="index.jsp?pages=<%=pages0-1%>" aria-label="Previous">
+							<a href="serach.jsp?pages=<%=pages0-1%>" aria-label="Previous">
 								<span aria-hidden="true">&laquo;</span>
 							</a>
 							<%
@@ -132,13 +146,13 @@
 								if (i != pages0) {
 						%>
 						<li>
-							<a href="index.jsp?pages=<%=i%>"><%=i%>
+							<a href="serach.jsp?pages=<%=i%>"><%=i%>
 							</a>
 						</li>
 						<%
 						} else {
 						%>
-						<li class="active"><a href="index.jsp?pages=<%=i%>"><%=i%>
+						<li class="active"><a href="serach.jsp?pages=<%=i%>"><%=i%>
 						</a></li>
 						<%
 

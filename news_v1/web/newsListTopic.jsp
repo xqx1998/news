@@ -17,6 +17,13 @@
 	}
 	//设置页面显示记录数
 	int pagesize = 8;
+	String topicName = "未指定";
+	topicName = request.getParameter("topic");
+	String topicId = request.getParameter("topicId");
+	int topicId0 = 0;
+	if(topicId != null && topicId.split(" ").length!=0){
+	    topicId0 = Integer.valueOf(topicId).intValue();
+	}
 
 %>
 <html lang="zh-CN">
@@ -26,7 +33,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
 	<base href="${pageContext.request.contextPath }/">
-	<title>落雨心星 论坛</title>
+	<title>落雨心星论坛</title>
 
 	<!-- Bootstrap -->
 	<link href="css/bootstrap.min.css" rel="stylesheet">
@@ -36,7 +43,7 @@
 	<script src="js/bootstrap.min.js"></script>
 	<LINK rel=stylesheet href="css/index.css">
 </head>
-<body style="background-color: #d6a2a2;">
+<body>
 <div class="container">
 	<diV class="col-md-12 col-center-block p">
 		<!-- 页眉 -->
@@ -44,6 +51,10 @@
 			<%@include file="top.jsp" %>
 		</div>
 		<div class="row">
+		<span class="active" >当前板块：<%=topicName%></span>
+		</div>
+		<div class="row border-top">
+
 			<!-- 内容主体 -->
 			<div class="col-md-12 content">
 				<table class="table table-condensed table-hover text-center">
@@ -60,10 +71,10 @@
 					<%
 						String pages = request.getParameter("pages");
 						int pages0 = 0;
-						String sql = "select news_id, news_title, news_topic_id, topic_name, news_time, news_user_id, news_username, news_access from view_news order by news_id desc limit " + pagesize + ";";
+						String sql = "select news_id, news_title, news_topic_id, topic_name, news_time, news_user_id, news_username, news_access from view_news where news_topic_id = "+ topicId0 +" order by news_id desc limit " + pagesize + ";";
 						if (pages != null) {
 							pages0 = Integer.valueOf(pages).intValue();
-							sql = "select news_id, news_title, news_topic_id, topic_name, news_time, news_user_id, news_username, news_access from view_news order by news_id desc limit " + (pages0 - 1) * pagesize + ", " + pagesize + ";";
+							sql = "select news_id, news_title, news_topic_id, topic_name, news_time, news_user_id, news_username, news_access from view_news where news_topic_id = "+ topicId0 +" order by news_id desc limit " + (pages0 - 1) * pagesize + ", " + pagesize + ";";
 						}
 						ArrayList<News> newsArrayList = newsDaoImpl.newsSelectList(sql);
 						if (newsArrayList.size() > 0) {
@@ -112,7 +123,7 @@
 							<%
 								if (pages0 > 1) {
 							%>
-							<a href="index.jsp?pages=<%=pages0-1%>" aria-label="Previous">
+							<a href="newsListTopic.jsp?topicId=<%=topicId0%>&&topic=<%=topicName%>&&pages=<%=pages0-1%>" aria-label="Previous">
 								<span aria-hidden="true">&laquo;</span>
 							</a>
 							<%
@@ -132,13 +143,13 @@
 								if (i != pages0) {
 						%>
 						<li>
-							<a href="index.jsp?pages=<%=i%>"><%=i%>
+							<a href="newsListTopic.jsp?topicId=<%=topicId0%>&&topic=<%=topicName%>&&pages=<%=i%>"><%=i%>
 							</a>
 						</li>
 						<%
 						} else {
 						%>
-						<li class="active"><a href="index.jsp?pages=<%=i%>"><%=i%>
+						<li class="active"><a href="newsListTopic.jsp?topicId=<%=topicId0%>&&topic=<%=topicName%>&&pages=<%=i%>"><%=i%>
 						</a></li>
 						<%
 
@@ -150,7 +161,7 @@
 							<%
 								if (pages0 < pag_0) {
 							%>
-							<a href="index.jsp?pages=<%=pages0+1%>" aria-label="Next">
+							<a href="newsListTopic.jsp?topicId=<%=topicId0%>&&topic=<%=topicName%>&&pages=<%=pages0+1%>" aria-label="Next">
 								<span aria-hidden="true">&raquo;</span>
 							</a>
 							<%
