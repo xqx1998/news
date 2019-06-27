@@ -17,4 +17,11 @@ public interface TopicDao {
      * @return ArrayList<Topic>
      */
     public ArrayList<Topic> selectAll();
+
+    /**
+     * Ìí¼ÓÖ÷Ìâ
+     * @param topic
+     * @return
+     */
+    public int topicAdd(Topic topic);
 }

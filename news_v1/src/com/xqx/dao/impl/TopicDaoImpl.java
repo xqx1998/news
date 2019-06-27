@@ -25,6 +25,7 @@ public class TopicDaoImpl extends TopicSQL implements TopicDao {
             if (rs.next()){
                 topic = new Topic(rs.getInt(1), rs.getString(2));
             }
+            db.close(rs, ps, conn);
         } catch (SQLException e) {
             System.out.println(e.getErrorCode());
             e.printStackTrace();
@@ -44,10 +45,27 @@ public class TopicDaoImpl extends TopicSQL implements TopicDao {
                 System.out.println(11);
                 topicArrayList.add(new Topic(rs.getInt(1), rs.getString(2)));
             }
+            db.close(rs, ps, conn);
         } catch (SQLException e) {
             System.out.println(e.getErrorCode());
             e.printStackTrace();
         }
         return topicArrayList;
+    }
+
+    @Override
+    public int topicAdd(Topic topic) {
+        Connection conn = db.getConnection();
+        String sql = "insert into topic(topic_name) value(?); ";
+        try {
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, topic.getTopic_name());
+            int rows = ps.executeUpdate();
+            if (rows == 1)
+                return 1;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
     }
 }
