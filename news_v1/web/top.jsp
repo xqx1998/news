@@ -6,23 +6,19 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:useBean id="topicDaoImpl" class="com.xqx.dao.impl.TopicDaoImpl" scope="page"></jsp:useBean>
-
-<html>
+<html lang="zh-CN">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
 	<base href="${pageContext.request.contextPath }/">
-	<title>落雨心星论坛1</title>
-
 	<!-- Bootstrap -->
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
 	<script src="js/jquery-3.2.1.min.js"></script>
 	<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
 	<script src="js/bootstrap.min.js"></script>
-	<LINK rel=stylesheet href="css/index.css">
 	<style>
 		.h {
 			height: 28px;
@@ -51,28 +47,7 @@
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-						   aria-expanded="false">板块 <span class="caret"></span></a>
-						<ul class="dropdown-menu">
 
-							<%
-								ArrayList<Topic> topicArrayList = topicDaoImpl.selectAll();
-								System.out.println(topicArrayList);
-								if (topicArrayList.size() > 0) {
-									for (Topic topic : topicArrayList) {
-							%>
-							<li><a href="newsListTopic.jsp?topicId=<%=topic.getTopic_id()%>&&topic=<%=topic.getTopic_name()%>"><%=topic.getTopic_name()%>
-							</a></li>
-							<li role="separator" class="divider"></li>
-							<%
-									}
-								}
-							%>
-
-						</ul>
-
-					</li>
 					<li><a href="#">首页 <span class="sr-only">(current)</span></a></li>
 					<li><a href=""></a></li>
 				</ul>
@@ -90,13 +65,14 @@
 					<%
 					} else {
 					%>
-					<li class="dropdown">
-						<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-						   aria-expanded="true">${sessionScope.user.getUsername()}<span class="caret"></span></a>
-						<ul class="dropdown-menu">
+					<%--<li class="dropdown">--%>
+						<%--<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+						   aria-expanded="false">${sessionScope.user.getUsername()}<span class="caret"></span></a>--%>
+						<%--<ul class="dropdown-menu">--%>
+							<li><a href="">${sessionScope.user.getUsername()}</a></li>
 							<li><a href="admin/home.jsp">个人后台</a></li>
 							<li><a href="index.jsp?action=sign_out">登出</a></li>
-							<li><a href="#">联系客服</a></li>
+
 <%--							<%--%>
 <%--								User user = (User)session.getAttribute("user");--%>
 <%--								if (user != null){--%>
@@ -108,8 +84,8 @@
 <%--								}--%>
 <%--							%>--%>
 							<li role="separator" class="divider"></li>
-						</ul>
-					</li>
+						<%--</ul>--%>
+					<%--</li>--%>
 					<%
 						}
 					%>
@@ -118,6 +94,21 @@
 			</div><!-- /.navbar-collapse -->
 		</div><!-- /.container-fluid -->
 	</nav>
+</div>
+<div class="row">
+	<div class="col-md-1 text-center"><h3><span>板块:</span></h3></div>
+			<%
+				ArrayList<Topic> topicArrayList = topicDaoImpl.selectAll();
+				System.out.println(topicArrayList);
+				if (topicArrayList.size() > 0) {
+					for (Topic topic : topicArrayList) {
+			%>
+			<div class="col-md-1 text-center"><h3><a href="newsListTopic.jsp?topicId=<%=topic.getTopic_id()%>&&topic=<%=topic.getTopic_name()%>"><%=topic.getTopic_name()%>
+			</a></h3></div>
+			<%
+					}
+				}
+			%>
 </div>
 </body>
 </html>

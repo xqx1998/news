@@ -26,8 +26,8 @@ public class NewsDeleteServlet extends HttpServlet {
         resp.setCharacterEncoding("gbk");
         PrintWriter out = resp.getWriter();
 
-        int code = 0;
-        // int code = newsDao.userDelete(id0);
+        // int code = 0;
+        int code = newsDao.newsDelete(id0);
         if(1 == code){
 //            out.println("<script> alert('新闻删除成功！');history.back(-1);</script>");
             out.println("<script> alert('新闻删除成功！');self.location=document.referrer;</script>");
