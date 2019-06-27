@@ -3,4 +3,36 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+    <servlet>
+        <servlet-name>LoginRegister</servlet-name>
+        <servlet-class>com.xqx.servlet.LoginRegistServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginRegister</servlet-name>
+        <url-pattern>/LoginRegister</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>NewsReleaseServlet</servlet-name>
+        <servlet-class>com.xqx.servlet.NewsReleaseServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>NewsReleaseServlet</servlet-name>
+        <url-pattern>/admin/NewsReleaseServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>NewsUpdateServlet</servlet-name>
+        <servlet-class>com.xqx.servlet.NewsUpdateServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>NewsUpdateServlet</servlet-name>
+        <url-pattern>/admin/NewsUpdateServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>NewsDeleteServlet</servlet-name>
+        <servlet-class>com.xqx.servlet.NewsDeleteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>NewsDeleteServlet</servlet-name>
+        <url-pattern>/admin/NewsDeleteServlet</url-pattern>
+    </servlet-mapping>
 </web-app>

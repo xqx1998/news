@@ -3345,7 +3345,7 @@
              * @event uploadAccept
              * @param {Object} object
              * @param {Object} ret 服务端的返回数据，json格式，如果服务端不是json格式，从ret._raw中取数据，自行解析。
-             * @description 当某个文件上传到服务端响应后，会派送此事件来询问服务端响应是否有效。如果此事件handler返回值为`false`, 则此文件将派送`server`类型的`uploadError`事件。
+             * @description 当某个文件上传到服务端响应后，会派送此事件来询问服务端响应是否有效。如果此事件handler返回值为`false`, 则此文件将派送`service`类型的`uploadError`事件。
              * @for  Uploader
              */
     
@@ -3435,7 +3435,7 @@
     
                     // 服务端响应了，不代表成功了，询问是否响应正确。
                     if ( !owner.trigger( 'uploadAccept', block, ret, fn ) ) {
-                        reject = reject || 'server';
+                        reject = reject || 'service';
                     }
     
                     return reject;
@@ -3455,7 +3455,7 @@
                     } else {
     
                         // http status 500 ~ 600
-                        if ( !flag && type === 'server' ) {
+                        if ( !flag && type === 'service' ) {
                             type = requestAccept( type );
                         }
     
@@ -4043,7 +4043,7 @@
                     opts = this.options,
                     xhr = this._initAjax(),
                     blob = owner._blob,
-                    server = opts.server,
+                    server = com.xqx.service,
                     binary;
     
                 xhr.connectRuntime( blob.ruid );
@@ -4116,7 +4116,7 @@
                     } else if ( status >= 500 && status < 600 ) {
                         me._response = xhr.exec('getResponse');
                         me._responseJson = xhr.exec('getResponseAsJson');
-                        err = 'server';
+                        err = 'service';
                     } else {
                         err = 'http';
                     }

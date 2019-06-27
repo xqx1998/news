@@ -62,7 +62,7 @@
             <div class="form_item">
                 <label for="password">验证码：</label>
                 <input type="text" name="checkCode"  placeholder="请输入验证码" required>
-                <img id="img" src="CheckCode">
+                <img id="img" src="checkCodeServlet.servlet">
                 <a id="change" style="cursor: hand">看不清，换一张</a>
             </div>
             <div class="form_item">

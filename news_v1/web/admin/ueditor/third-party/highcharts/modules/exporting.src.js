@@ -325,7 +325,7 @@ extend(Chart.prototype, {
 	},
 
 	/**
-	 * Submit the SVG representation of the chart to the server
+	 * Submit the SVG representation of the chart to the service
 	 * @param {Object} options Exporting options. Possible members are url, type and width.
 	 * @param {Object} chartOptions Additional chart options for the SVG representation of the chart
 	 */

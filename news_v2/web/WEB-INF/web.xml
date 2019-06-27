@@ -3,6 +3,46 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+    <servlet>
+        <servlet-name>LoginRegister</servlet-name>
+        <servlet-class>com.xqx.servlet.LoginRegistServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginRegister</servlet-name>
+        <url-pattern>/LoginRegister.servlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>checkCodeServlet</servlet-name>
+        <servlet-class>com.xqx.servlet.CheckCodeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>checkCodeServlet</servlet-name>
+        <url-pattern>/checkCodeServlet.servlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>NewsReleaseServlet</servlet-name>
+        <servlet-class>com.xqx.servlet.NewsReleaseServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>NewsReleaseServlet</servlet-name>
+        <url-pattern>/admin/NewsReleaseServlet.servlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>NewsUpdateServlet</servlet-name>
+        <servlet-class>com.xqx.servlet.NewsUpdateServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>NewsUpdateServlet</servlet-name>
+        <url-pattern>/admin/NewsUpdateServlet.servlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>NewsDeleteServlet</servlet-name>
+        <servlet-class>com.xqx.servlet.NewsDeleteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>NewsDeleteServlet</servlet-name>
+        <url-pattern>/admin/NewsDeleteServlet.servlet</url-pattern>
+    </servlet-mapping>
     <filter>
         <filter-name>struts2</filter-name>
         <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
