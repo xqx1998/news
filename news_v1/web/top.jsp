@@ -91,8 +91,8 @@
 					} else {
 					%>
 					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-						   aria-expanded="false">${sessionScope.user.getUsername()}<span class="caret"></span></a>
+						<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+						   aria-expanded="true">${sessionScope.user.getUsername()}<span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><a href="admin/home.jsp">个人后台</a></li>
 							<li><a href="index.jsp?action=sign_out">登出</a></li>
@@ -114,6 +114,7 @@
 						}
 					%>
 				</ul>
+
 			</div><!-- /.navbar-collapse -->
 		</div><!-- /.container-fluid -->
 	</nav>

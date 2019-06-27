@@ -577,4 +577,20 @@ public class NewsDaoImpl extends NewsSQL implements NewsDao {
         }
         return 0;
     }
+
+    @Override
+    public int newsAccessUpdate(String sql) {
+        Connection conn = db.getConnection();
+        try {
+            PreparedStatement ps = conn.prepareStatement(sql);
+            int rows= ps.executeUpdate();
+            if(rows == 1){
+                return 1;
+            }
+            db.close(null, ps, conn);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
 }

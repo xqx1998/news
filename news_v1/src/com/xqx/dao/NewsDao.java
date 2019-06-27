@@ -83,8 +83,15 @@ public interface NewsDao {
     public int newsDeleteMore(ArrayList<Integer> id_list);
 
     /**
-     *
+     * 发帖数量统计
      * @return
      */
     public int newsCount();
+
+    /**
+     * 发帖访问更新
+     * @param sql
+     * @return
+     */
+    public int newsAccessUpdate(String sql);
 }

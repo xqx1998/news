@@ -64,6 +64,10 @@
 					String news_id = request.getParameter("id");
 					int news_id0 = Integer.valueOf(news_id).intValue();
 					String topic = request.getParameter("topic");
+					String sql_access = "UPDATE news SET news_access = news_access+1 WHERE news_id = "+ news_id0;
+					int rows = newsDaoImpl.newsAccessUpdate(sql_access);
+					System.out.println("rows:"+rows);
+					//发帖信息查找
 					News news = newsDaoImpl.newsSelect(news_id0);
 				%>
 				<div class="input-group input-group-lg text">
