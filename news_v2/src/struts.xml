@@ -10,6 +10,8 @@
             <result name="toHome">admin/home.jsp</result>
             <result name="toLogin">login.jsp</result>
             <result name="toRegister">register.jsp</result>
+            <result name="toIndex">index.jsp</result>
+            <result name="toRegister">register.jsp</result>
         </action>
     </package>
 </struts>

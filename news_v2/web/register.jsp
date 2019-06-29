@@ -17,7 +17,24 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>首页</title>
     <link rel="stylesheet" href="css/style.css">
-    <script>
+    <script type="text/javascript">
+        var registerResult="<%=session.getAttribute("registerResult")%>";
+        if(registerResult!= 'null') {
+            if (registerResult == '1') {
+                alert('注册成功！');
+                <%
+                    session.removeAttribute("registerResult");
+                %>
+                location.href = 'user_toLogin.action';
+            } else {
+            alert(registerResult);
+                <%
+						session.removeAttribute("registerResult");
+				%>
+            location.href = 'user_toRegister.action';
+        }
+        }
+
         /*
         分析：更新验证码，点击超链接或图片
         1.给超链接和图片绑定单击事件
@@ -32,14 +49,14 @@
                 // 加时间戳
                 var date = new Date().getTime();
                 //重写验证码请求路径
-                img.src = "CheckCode"+"?"+date;
+                img.src = "checkCodeServlet.servlet"+"?"+date;
             }
 
             var change = document.getElementById("change");
             change.onclick = function () {
                 // 加时间戳
                 var date = new Date().getTime();
-                img.src = "CheckCode"+"?"+date;
+                img.src = "checkCodeServlet.servlet"+"?"+date;
             }
         }
     </script>
@@ -48,7 +65,7 @@
 <div class="form" style="position:relative">
     <!--注册表单-->
     <div class="form_register">
-        <form action="<%=path%>LoginRegister" method="post">
+        <form action="<%=path%>user_register.action" method="post">
             <h1>注册</h1>
             <div class="form_item">
                 <label for="username">用户名：</label>
@@ -69,14 +86,17 @@
             <div class="form_item">
                 <label for="password">验证码：</label>
                 <input type="text" name="checkCode"  placeholder="请输入验证码" required>
-                <img id="img" src="CheckCode">
+                <img id="img" src="checkCodeServlet.servlet">
                 <span id="change" style="cursor: hand">看不清，换一张</span>
             </div>
             <div class="form_item">
                 <input type="hidden" name="type" value="register" />
                 <input type="submit" value="注册">
             </div>
-            <div class="info">已有账号？点击<span><a href="login.jsp"> 登录</a></span></div>
+            <div class="form_item" align="center">
+                <h1 style="color: rgba(220,60,53,0.76);">${sessionScope.registerResult}</h1>
+            </div>
+            <div class="info">已有账号？点击<span><a href="user_toLogin.action"> 登录</a></span></div>
         </form>
 
     </div>

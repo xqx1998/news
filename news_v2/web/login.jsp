@@ -18,6 +18,23 @@
     <title>首页</title>
     <link rel="stylesheet" href="css/style.css">
     <script>
+        var loginResult="<%=session.getAttribute("loginResult")%>";
+        if(loginResult != 'null'){
+            if(loginResult == '1'){
+                alert("通过验证，请点击确定");
+                <%
+                    session.removeAttribute("loginResult");
+                %>
+                location.href = 'user_toIndex.action';
+            }else {
+                alert(loginResult);
+                <%
+                    session.removeAttribute("loginResult");
+                %>
+                location.href = 'user_toLogin.action';
+            }
+        }
+
         /*
         分析：更新验证码，点击超链接或图片
         1.给超链接和图片绑定单击事件
@@ -32,14 +49,14 @@
                 // 加时间戳
                 var date = new Date().getTime();
                 //重写验证码请求路径
-                img.src = "CheckCode"+"?"+date;
+                img.src = "checkCodeServlet.servlet"+"?"+date;
             }
 
             var change1 = document.getElementById("change");
             change1.onclick = function () {
                 // 加时间戳
                 var date = new Date().getTime();
-                img.src = "CheckCode"+"?"+date;
+                img.src = "checkCodeServlet.servlet"+"?"+date;
             }
         }
     </script>
@@ -49,7 +66,7 @@
    <!--登录表单-->
     <div class="form_login">
 
-        <form action="<%=path%>LoginRegister" method="post">
+        <form action="<%=path%>user_login.action" method="post">
             <h1>管理员登录</h1>
             <div class="form_item">
                 <label for="username">用户名：</label>
@@ -69,8 +86,11 @@
                 <input type="hidden" name="type" value="login" />
                 <input type="submit" value="登录">
             </div>
+            <div class="form_item" align="center">
+                <h1 style="color: rgba(220,60,53,0.76);">${sessionScope.loginResult}</h1>
+            </div>
         </form>
-        <div class="info">没有账号？点击<span class="switch register_Btn"><a href="register.jsp"> 注册账号</a></span></div>
+        <div class="info">没有账号？点击<span class="switch register_Btn"><a href="user_toRegister.action"> 注册账号</a></span></div>
 
     </div>
 

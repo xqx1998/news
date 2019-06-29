@@ -61,7 +61,8 @@
 					<%
 						if (session.getAttribute("user") == null) {
 					%>
-					<li><a href="login.jsp">登录</a></li>
+					<li><a href="user_toLogin.action">登录</a></li>
+					<li><a href="user_toRegister.action">注册</a></li>
 					<%
 					} else {
 					%>
