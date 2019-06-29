@@ -65,34 +65,21 @@
 					<%
 					} else {
 					%>
-					<%--<li class="dropdown">--%>
-						<%--<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-						   aria-expanded="false">${sessionScope.user.getUsername()}<span class="caret"></span></a>--%>
-						<%--<ul class="dropdown-menu">--%>
+
 							<li><a href="">${sessionScope.user.getUsername()}</a></li>
 							<li><a href="admin/home.jsp">个人后台</a></li>
 							<li><a href="index.jsp?action=sign_out">登出</a></li>
 
-<%--							<%--%>
-<%--								User user = (User)session.getAttribute("user");--%>
-<%--								if (user != null){--%>
-<%--								if (user.getLevel()==3){--%>
-<%--							%>--%>
 							<li><a href="admin/home.jsp">后台管理</a></li>
-<%--							<%--%>
-<%--								}--%>
-<%--								}--%>
-<%--							%>--%>
 							<li role="separator" class="divider"></li>
-						<%--</ul>--%>
-					<%--</li>--%>
+
 					<%
 						}
 					%>
 				</ul>
 
-			</div><!-- /.navbar-collapse -->
-		</div><!-- /.container-fluid -->
+			</div>
+		</div>
 	</nav>
 </div>
 <div class="row">
