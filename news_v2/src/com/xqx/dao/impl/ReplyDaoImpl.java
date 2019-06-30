@@ -48,6 +48,7 @@ public class ReplyDaoImpl extends ReplySql implements ReplyDao {
             e.printStackTrace();
             return e.getErrorCode();
         }
+        db.close(null, ps, connection);
         return 0;
     }
 

@@ -49,7 +49,7 @@
 		}
 	</style>
 </head>
-<body style="background-color: #d6a2a2;">
+<body style="background-color: #bfc1d0;">
 <div class="container p"  >
 	<diV class="col-md-12 col-center-block">
 		<!-- 页眉 -->
@@ -96,14 +96,14 @@
 					User user1 = userDaoImpl.userSelect(reply.getReply_user_id());
 			%>
 
-			<div class="row" style="background-color: #ffacb3">
+			<div class="row" style="background-color: rgba(169, 135, 165, 0.3);">
 				<div class="col-md-3">
 					<img src="images/user/man2.jpg" width="100" height="200"/>
 					<h2><%=i%>楼 <%=user1.getUsername()%>
 					</h2>
 				</div>
-				<div class="col-md-9">
-					<div class="row">
+				<div class="col-md-9" style="background-color: rgba(169, 135, 165, 0.5);">
+					<div class="row" style="background-color: rgba(169, 135, 165, 0.8);">
 					<div class="col-md-1"><%=reply.getReply_id()%>
 					</div>
 					<div class="col-md-1"><%=reply.getReply_news_id()%>
@@ -117,7 +117,7 @@
 					<div class="col-md-4"><%=reply.getReply_time()%>
 					</div>
 					</div>
-					<div class="row">
+					<div class="row" style="background-color: rgba(169, 135, 165, 0.8);">
 						<%=reply.getReply_content()%>
 					</div>
 					<%

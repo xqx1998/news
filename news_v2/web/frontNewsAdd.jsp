@@ -38,7 +38,7 @@
     </style>
 </head>
 
-<body style="background-color: #d6a2a2;">
+<body style="background-color: #bfc1d0;">
 <form action ="admin/NewsReleaseServlet"method="post">
     <div class="input-group input-group-lg text">
         <span class="input-group-addon">标题</span>

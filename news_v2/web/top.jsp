@@ -29,7 +29,7 @@
 </head>
 <body>
 <div class="row">
-	<nav class="navbar navbar-inverse h col-md-11 " style="margin-left: 4% ">
+	<nav class="navbar navbar-default h col-md-11 " style="margin-left: 4% ">
 		<div class="container-fluid">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">

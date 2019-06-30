@@ -25,7 +25,7 @@
 </head>
 <body>
     <div class="container-fluid">
-        <diV class="col-md-11 col-center-block">
+        <diV class="col-md-11 col-center-block" style="border: 2px solid #616dff;">
         <!-- 页眉 -->
         <div class="row top">
             <%@include file="top.jsp"%>
@@ -56,12 +56,25 @@
                             <td class="col-md-2">发布者名称 访问量</td>
                             <td class="col-md-1">操作</td>
                         </th>
-                            <%
+                            <%--<%
                                 String sql = "select news_id, news_title, news_topic_id, topic_name, news_time, news_user_id, news_username, news_access from view_news;";
 
                                 ArrayList<News> newsArrayList = newsDaoImpl.newsSelectList(sql);
                                 if(newsArrayList.size()>0){
                                     for (News news: newsArrayList) {
+                            %>--%>
+                            <%
+                                int pagesize = 15;
+                                String pages = request.getParameter("pages");
+                                int pages0 = 0;
+                                String sql = "select news_id, news_title, news_topic_id, topic_name, news_time, news_user_id, news_username, news_access from view_news order by news_id desc limit " + pagesize + ";";
+                                if (pages != null) {
+                                    pages0 = Integer.valueOf(pages).intValue();
+                                    sql = "select news_id, news_title, news_topic_id, topic_name, news_time, news_user_id, news_username, news_access from view_news order by news_id desc limit " + (pages0 - 1) * pagesize + ", " + pagesize + ";";
+                                }
+                                ArrayList<News> newsArrayList = newsDaoImpl.newsSelectList(sql);
+                                if (newsArrayList.size() > 0) {
+                                    for (News news : newsArrayList) {
                             %>
                             <tr class="row">
                                 <td class="col-md-1">
@@ -90,51 +103,64 @@
                             %>
 
                     </table>
+                    <nav aria-label="Page navigation">
+                        第
+                        <ul class="pagination">
 
+                            <li>
+                                <%
+                                    if (pages0 > 1) {
+                                %>
+                                <a href="admin/newsList.jsp?pages=<%=pages0-1%>" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                                <%
+                                    }
+                                %>
+                            </li>
+                            <%
+                                //获取发帖总数
+                                int newsCount0 = newsDaoImpl.newsCount();
+                                int pag_0 = newsCount0 / pagesize;
+                                int pag_1 = newsCount0 % pagesize;
+                                if (pag_1 > 0) {
+                                    pag_0 += 1;
+                                }
+                                int i = 0;
+                                for (i = 1; i <= pag_0; i++) {
+                                    if (i != pages0) {
+                            %>
+                            <li>
+                                <a href="admin/newsList.jsp?pages=<%=i%>"><%=i%>
+                                </a>
+                            </li>
+                            <%
+                            } else {
+                            %>
+                            <li class="active"><a href="newsList.jsp?pages=<%=i%>"><%=i%>
+                            </a></li>
+                            <%
 
+                                    }
+                                }
+                            %>
 
+                            <li>
+                                <%
+                                    if (pages0 < pag_0) {
+                                %>
+                                <a href="admin/newsList.jsp?pages=<%=pages0+1%>" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                                <%
+                                    }
+                                %>
+                            </li>
+
+                        </ul>
+                        页
+                    </nav>
             </div>
-
-<%--            <div class="col-md-10 content ">--%>
-<%--                &lt;%&ndash;路径导航&ndash;%&gt;--%>
-<%--                <div class="row path">--%>
-<%--                    <ol class="breadcrumb ">--%>
-<%--                        <li><a href="admin/home.jsp">主页</a></li>--%>
-<%--                        <li class="disabled">新闻管理</li>--%>
-<%--                        <li class="active"><a href="admin/newsList.jsp">新闻列表</a></li>--%>
-<%--                    </ol>--%>
-<%--                </div>--%>
-<%--                    &lt;%&ndash;内容&ndash;%&gt;--%>
-<%--                    <div class="row text-center">--%>
-<%--                        <div class="col-md-1">新闻编号</div>--%>
-<%--                        <div class="col-md-5">新闻标题</div>--%>
-<%--                        <div class="col-md-1">分类编号</div>--%>
-<%--                        <div class="col-md-2">发布时间</div>--%>
-<%--                        <div class="col-md-1">发布者编号</div>--%>
-<%--                        <div class="col-md-2">发布者名称</div>--%>
-<%--                    </div>--%>
-<%--                    <%--%>
-<%--                        ArrayList<News> newsArrayList = newsDaoImpl.newsSelectAll();--%>
-<%--                        if(newsArrayList.size()>0){--%>
-<%--                            for (News news: newsArrayList) {--%>
-<%--                    %>--%>
-<%--                <div class="row text-center">--%>
-<%--                    <div class="col-md-1"><%=news.getNews_id()%></div>--%>
-<%--                    <div class="col-md-5"><%=news.getNews_title()%></div>--%>
-<%--                    <div class="col-md-1"><%=news.getNews_TopicId()%></div>--%>
-<%--                    <div class="col-md-2"><%=news.getNews_time()%></div>--%>
-<%--                    <div class="col-md-1"><%=news.getNews_user_id()%></div>--%>
-<%--                    <div class="col-md-2"><%=news.getNews_username()%></div>--%>
-<%--                </div>--%>
-<%--                <%--%>
-<%--                        }--%>
-<%--                    }else{--%>
-<%--                %>--%>
-<%--                    暂无新闻信息！--%>
-<%--                <%--%>
-<%--                    }--%>
-<%--                %>--%>
-<%--            </div>--%>
         </div>
 
         <!-- 页脚 -->

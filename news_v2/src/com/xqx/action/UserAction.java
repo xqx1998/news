@@ -5,14 +5,10 @@ import com.xqx.control.UserControl;
 import com.xqx.model.User;
 import com.xqx.service.UserService;
 import com.xqx.service.impl.UserServiceImpl;
-import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.interceptor.ServletRequestAware;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.io.IOException;
-import java.io.PrintWriter;
 
 public class UserAction extends ActionSupport implements ServletRequestAware {
     UserService userService = new UserServiceImpl();
@@ -118,7 +114,7 @@ public class UserAction extends ActionSupport implements ServletRequestAware {
                     session.setAttribute("user", user_r);
                     session.setAttribute("user_ds", user_ds);
                     session.setAttribute("loginResult", "1");
-                    return "toIndex";
+
                 } else if (user_r.getUser_id() == 0) {
                     session.setAttribute("loginResult", "用户不存在！");
                 } else {

@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <base href="${pageContext.request.contextPath }/">
-    <title>HelloWorld</title>
+    <title></title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -27,7 +27,7 @@
 
 </head>
 <body>
-<div class="container-fluid">
+<div class="container-fluid" style="background-color: #d0e2db;">
     <!-- Single button -->
     <div class="btn-group col-md-12">
         <button type="button" class="btn btn-default dropdown-toggle nav-text" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">

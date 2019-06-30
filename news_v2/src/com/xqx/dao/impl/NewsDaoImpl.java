@@ -66,6 +66,7 @@ public class NewsDaoImpl extends NewsSQL implements NewsDao {
             e.printStackTrace();
             return e.getErrorCode();
         }
+        db.close(null, ps, connection);
         return 0;
     }
 
@@ -97,6 +98,7 @@ public class NewsDaoImpl extends NewsSQL implements NewsDao {
             e.printStackTrace();
             return e.getErrorCode();
         }
+        db.close(null, ps, connection);
         return 0;
     }
 
@@ -151,10 +153,11 @@ public class NewsDaoImpl extends NewsSQL implements NewsDao {
             while(rs.next()){
                 newsArrayList.add(new News(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getString(4), rs.getInt(5), rs.getString(6)));
             }
-            db.close(rs, ps, conn);db.close(rs, ps, conn);
+            db.close(rs, ps, conn);
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
         return newsArrayList;
     }
 

@@ -50,7 +50,7 @@
 	<script src="js/bootstrap.min.js"></script>
 	<LINK rel=stylesheet href="css/index.css">
 </head>
-<body style="background-color: #d6a2a2;">
+<body style="background-color: #bfc1d0;">
 <div class="container">
 	<diV class="col-md-12 col-center-block p">
 		<!-- 页眉 -->

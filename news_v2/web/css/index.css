@@ -3,11 +3,11 @@
     padding: 0;
 }
 body{
-    background-color: #d6a2a2;
+    background-color: #bfc1d0;
 }
 .p{
     /*background: url('../images/bg3.jpg') no-repeat center/cover;*/
-    background-color: rgba(0, 255, 255, 0.2) ;
+    background-color: rgba(133, 191, 191, 0.2);
 }
 .top {
     /*border: 2px solid #616dff;*/

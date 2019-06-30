@@ -25,7 +25,7 @@
 </head>
 <body>
     <div class="container-fluid">
-        <diV class="col-md-11 col-center-block">
+        <diV class="col-md-11 col-center-block" style="border: 2px solid #616dff;">
         <!-- 页眉 -->
         <div class="row top">
             <%@include file="top.jsp"%>
@@ -36,7 +36,7 @@
                 <%@include file="nav.jsp"%>
             </div>
             <!-- 内容主体 -->
-            <div class="col-md-10 content">
+            <div class="col-md-10 content" class="height:85%;">
                 <div class="row path">
                     <ol class="breadcrumb ">
                         <li><a href="admin/home.jsp">主页</a></li>

@@ -56,9 +56,10 @@ public class TopicDaoImpl extends TopicSQL implements TopicDao {
     @Override
     public int topicAdd(Topic topic) {
         Connection conn = db.getConnection();
+        PreparedStatement ps = null;
         String sql = "insert into topic(topic_name) value(?); ";
         try {
-            PreparedStatement ps = conn.prepareStatement(sql);
+            ps = conn.prepareStatement(sql);
             ps.setString(1, topic.getTopic_name());
             int rows = ps.executeUpdate();
             if (rows == 1)
@@ -66,6 +67,7 @@ public class TopicDaoImpl extends TopicSQL implements TopicDao {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        db.close(null, ps, conn);
         return 0;
     }
 }

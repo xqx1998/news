@@ -27,7 +27,7 @@
 </head>
 <body>
     <div class="container-fluid">
-        <diV class="col-md-11 col-center-block">
+        <diV class="col-md-11 col-center-block" style="border: 2px solid #616dff;">
         <!-- 页眉 -->
         <div class="row top">
             <%@include file="top.jsp"%>
@@ -59,7 +59,7 @@
                         <td class="col-md-1">操作</td>
                         </th>
                         <%
-                            String sql = "select news_id, news_title, news_topic_id, topic_name, news_time, news_user_id, news_username, news_access from view_news order by news_access desc limit 10";
+                            String sql = "select news_id, news_title, news_topic_id, topic_name, news_time, news_user_id, news_username, news_access from view_news order by news_access desc limit 15";
                             ArrayList<News> newsArrayList = newsDaoImpl.newsSelectList(sql);
                             if(newsArrayList.size()>0){
                                 for (News news: newsArrayList) {
