@@ -20,15 +20,15 @@
 </head>
 <body>
 <div class="container-fluid">
-    <div class="row" style="background-color: #d0e2db;">
+    <div class="row" style="background-color: #c8c9ca;">
         <div class="col-md-3">
-            <h1>论坛后台管理</h1>
+            <h3>论坛后台管理</h3>
         </div>
         <div class="col-md-4">
-            <h2><a href="index.jsp">论坛首页</a></h2>
+            <h3><a href="index.jsp">论坛首页</a></h3>
         </div>
         <div class="col-md-5">
-            <h1>个人信息：${sessionScope.user.getUsername()}</h1>
+            <h3 style="color: #5f7797">个人信息：${sessionScope.user.getUsername()}</h3>
         </div>
     </div>
 

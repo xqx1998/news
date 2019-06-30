@@ -60,9 +60,9 @@
                 <div class="row path">
                     <ol class="breadcrumb ">
                         <li><a href="admin/home.jsp">主页</a></li>
-                        <li class="disabled">新闻管理</li>
-                        <li><a href="admin/newsList.jsp">新闻列表</a></li>
-                        <li class="active"><a href="admin/newsUpdate.jsp">新闻修改</a></li>
+                        <li class="disabled">帖子管理</li>
+                        <li><a href="admin/newsList.jsp">帖子列表</a></li>
+                        <li class="active"><a href="admin/newsUpdate.jsp">帖子修改</a></li>
                     </ol>
                 </div>
                 <div class="row">
@@ -74,7 +74,7 @@
                         int topic_id0 = Integer.valueOf(topic_id).intValue();
                         News news = newsDaoImpl.newsSelect(news_id0);
                     %>
-                    <form action ="admin/NewsUpdateServlet"method="post">
+                    <form action ="admin/NewsUpdateServlet.servlet"method="post">
                         <div class="input-group input-group-lg text">
                             <span class="input-group-addon">标题</span>
                             <input type="text" class="form-control" name="title" value="<%=news.getNews_title()%>" aria-describedby="sizing-addon1">

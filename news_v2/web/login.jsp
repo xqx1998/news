@@ -67,7 +67,7 @@
     <div class="form_login">
 
         <form action="<%=path%>user_login.action" method="post">
-            <h1>管理员登录</h1>
+            <h1>login</h1>
             <div class="form_item">
                 <label for="username">用户名：</label>
                 <input type="text" name="username" id="username" placeholder="请输入用户名" required autofocus="autofocus">

@@ -41,15 +41,15 @@
                 <div class="row path">
                     <ol class="breadcrumb ">
                         <li><a href="admin/home.jsp">主页</a></li>
-                        <li class="disabled">新闻管理</li>
-                        <li class="active"><a href="admin/newsList.jsp">新闻列表</a></li>
+                        <li class="disabled">帖子管理</li>
+                        <li class="active"><a href="admin/newsList.jsp">帖子列表</a></li>
                     </ol>
                 </div>
                     <table class="table table-condensed table-hover text-center">
                         <%--内容--%>
                         <th class="row">
-                            <td class="col-md-1">选择 新闻编号</td>
-                            <td class="col-md-4">新闻标题</td>
+                            <td class="col-md-1">选择 帖子编号</td>
+                            <td class="col-md-4">帖子标题</td>
                             <td class="col-md-1">分类编号 类别</td>
                             <td class="col-md-2">发布时间</td>
                             <td class="col-md-1">发布者编号</td>
@@ -88,7 +88,7 @@
                                 <td class="col-md-2"><%=news.getNews_username()%> <%=news.getNews_access()%></td>
                                 <td class="col-md-1">
                                     <button class="button btn-info"><a href="admin/newsUpdate.jsp?id=<%=news.getNews_id()%>&&topic_id=<%=news.getNews_TopicId()%>">编辑</a></button>
-                                    <button class="button btn-warning"><a href="admin/NewsDeleteServlet?id=<%=news.getNews_id()%>">删除</a></button>
+                                    <button class="button btn-warning"><a href="admin/NewsDeleteServlet.servlet?id=<%=news.getNews_id()%>">删除</a></button>
                                 </td>
                             </tr>
                             <%
@@ -96,7 +96,7 @@
                             }else{
                             %>
                             <tr class="row text-center">
-                                <td colspan="6" class="col-md-1">暂无新闻信息</td>
+                                <td colspan="6" class="col-md-1">暂无帖子信息</td>
                             </tr>
                             <%
                                 }
@@ -104,7 +104,6 @@
 
                     </table>
                     <nav aria-label="Page navigation">
-                        第
                         <ul class="pagination">
 
                             <li>
@@ -156,9 +155,7 @@
                                     }
                                 %>
                             </li>
-
                         </ul>
-                        页
                     </nav>
             </div>
         </div>

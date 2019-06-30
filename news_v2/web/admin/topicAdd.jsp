@@ -40,7 +40,7 @@
                 <div class="row path">
                     <ol class="breadcrumb ">
                         <li><a href="admin/home.jsp">主页</a></li>
-                        <li class="disabled">新闻管理</li>
+                        <li class="disabled">主题管理</li>
                         <li class="active"><a href="admin/topicAdd.jsp">主题添加</a></li>
                     </ol>
                 </div>

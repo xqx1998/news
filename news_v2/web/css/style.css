@@ -2,7 +2,7 @@ html{
     height: 100%;
 }
 body{
-    background: url('../images/bg.jpg') no-repeat center/cover;
+    background: url('../images/bg3.jpg') no-repeat center/cover;
 }
 .form{
     width: 500px;
@@ -11,7 +11,7 @@ body{
 }
 .form_register,.form_login{
     width: 500px;
-    background-color:rgba(0, 188, 212, 0.7);
+    background-color:rgba(220, 233, 234, 0.7);
     border-radius: 5px;
     box-shadow: 0 0 3px #ccc;  
     overflow: hidden;

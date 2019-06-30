@@ -18,7 +18,7 @@
 <body>
 <div class="container-fluid">
     <div class="row footer">
-        <p  class="text-center">楚雄师范学院 信息科学与技术学院 2016级计科1班 董娟娟 创作</p>
+        <p  class="text-center">信息科学与技术学院 2016级计科1班 郑超丞 创作</p>
     </div>
 </div>
 </body>

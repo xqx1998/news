@@ -27,7 +27,7 @@
 
 </head>
 <body>
-<div class="container-fluid" style="background-color: #d0e2db;">
+<div class="container-fluid">
     <!-- Single button -->
     <div class="btn-group col-md-12">
         <button type="button" class="btn btn-default dropdown-toggle nav-text" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">

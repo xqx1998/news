@@ -26,7 +26,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
 	<base href="${pageContext.request.contextPath }/">
-	<title>落雨心星 论坛</title>
+	<title>音乐 论坛</title>
 
 	<!-- Bootstrap -->
 	<link href="css/bootstrap.min.css" rel="stylesheet">
@@ -36,7 +36,7 @@
 	<script src="js/bootstrap.min.js"></script>
 	<LINK rel=stylesheet href="css/index.css">
 </head>
-<body style="background-color: #bfc1d0;">
+<body style="background-color: #ece4e6;">
 <div class="container">
 	<diV class="col-md-12 col-center-block p">
 		<!-- 页眉 -->
@@ -105,7 +105,6 @@
 				</table>
 
 				<nav aria-label="Page navigation">
-					第
 					<ul class="pagination">
 
 						<li>
@@ -159,7 +158,7 @@
 						</li>
 
 					</ul>
-					页
+
 				</nav>
 
 			</div>

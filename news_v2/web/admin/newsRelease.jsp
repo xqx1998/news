@@ -37,7 +37,7 @@
 </head>
 
 <body>
-<form action ="admin/NewsReleaseServlet"method="post">
+<form action ="admin/NewsReleaseServlet.servlet"method="post">
     <div class="input-group input-group-lg text">
         <span class="input-group-addon">标题</span>
         <input type="text" class="form-control" name="title" aria-describedby="sizing-addon1">

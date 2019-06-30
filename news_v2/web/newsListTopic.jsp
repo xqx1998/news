@@ -116,7 +116,6 @@
 				</table>
 
 				<nav aria-label="Page navigation">
-					第
 					<ul class="pagination">
 
 						<li>
@@ -168,11 +167,8 @@
 								}
 							%>
 						</li>
-
 					</ul>
-					页
 				</nav>
-
 			</div>
 		</div>
 		<!-- 页脚 -->
