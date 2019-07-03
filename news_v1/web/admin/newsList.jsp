@@ -24,8 +24,8 @@
     <LINK rel=stylesheet href="admin/css/home.css">
 </head>
 <body>
-    <div class="container-fluid">
-        <diV class="col-md-11 col-center-block">
+    <div class="container-fluid" >
+        <diV class="col-md-11 col-center-block" style="border: 2px solid #616dff;">
         <!-- 页眉 -->
         <div class="row top">
             <%@include file="top.jsp"%>
@@ -90,53 +90,8 @@
                             %>
 
                     </table>
-
-
-
             </div>
-
-<%--            <div class="col-md-10 content ">--%>
-<%--                &lt;%&ndash;路径导航&ndash;%&gt;--%>
-<%--                <div class="row path">--%>
-<%--                    <ol class="breadcrumb ">--%>
-<%--                        <li><a href="admin/home.jsp">主页</a></li>--%>
-<%--                        <li class="disabled">新闻管理</li>--%>
-<%--                        <li class="active"><a href="admin/newsList.jsp">新闻列表</a></li>--%>
-<%--                    </ol>--%>
-<%--                </div>--%>
-<%--                    &lt;%&ndash;内容&ndash;%&gt;--%>
-<%--                    <div class="row text-center">--%>
-<%--                        <div class="col-md-1">新闻编号</div>--%>
-<%--                        <div class="col-md-5">新闻标题</div>--%>
-<%--                        <div class="col-md-1">分类编号</div>--%>
-<%--                        <div class="col-md-2">发布时间</div>--%>
-<%--                        <div class="col-md-1">发布者编号</div>--%>
-<%--                        <div class="col-md-2">发布者名称</div>--%>
-<%--                    </div>--%>
-<%--                    <%--%>
-<%--                        ArrayList<News> newsArrayList = newsDaoImpl.newsSelectAll();--%>
-<%--                        if(newsArrayList.size()>0){--%>
-<%--                            for (News news: newsArrayList) {--%>
-<%--                    %>--%>
-<%--                <div class="row text-center">--%>
-<%--                    <div class="col-md-1"><%=news.getNews_id()%></div>--%>
-<%--                    <div class="col-md-5"><%=news.getNews_title()%></div>--%>
-<%--                    <div class="col-md-1"><%=news.getNews_TopicId()%></div>--%>
-<%--                    <div class="col-md-2"><%=news.getNews_time()%></div>--%>
-<%--                    <div class="col-md-1"><%=news.getNews_user_id()%></div>--%>
-<%--                    <div class="col-md-2"><%=news.getNews_username()%></div>--%>
-<%--                </div>--%>
-<%--                <%--%>
-<%--                        }--%>
-<%--                    }else{--%>
-<%--                %>--%>
-<%--                    暂无新闻信息！--%>
-<%--                <%--%>
-<%--                    }--%>
-<%--                %>--%>
-<%--            </div>--%>
         </div>
-
         <!-- 页脚 -->
         <div class="row bottom">
             <%@include file="bottom.jsp"%>
