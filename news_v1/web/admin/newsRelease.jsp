@@ -59,7 +59,7 @@
             %>
         </select>
     </div>
-<textarea name="content" id="myEditor" style="height: 65%"></textarea>
+<textarea name="content" id="myEditor" style="height: 50%; width: 100%"></textarea>
 <%--    <script id="myEditor" name="textContent" type="text/plain"></script>--%>
 <script type="text/javascript">
 // var editor =new UE.ui.Editor();

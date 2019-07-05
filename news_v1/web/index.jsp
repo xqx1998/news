@@ -49,7 +49,7 @@
 				<table class="table table-condensed table-hover text-center">
 					<%--内容--%>
 					<th class="row">
-					<td class="col-md-1">选择 发帖编号</td>
+					<td class="col-md-1">发帖编号</td>
 					<td class="col-md-4">发帖标题</td>
 					<td class="col-md-1">分类编号 类别</td>
 					<td class="col-md-2">发布时间</td>
@@ -71,7 +71,7 @@
 					%>
 					<tr class="row">
 						<td class="col-md-1">
-							<input type="checkbox" name="news_id" value="<%=news.getNews_id()%>"/>
+							<%--<input type="checkbox" name="news_id" value="<%=news.getNews_id()%>"/>--%>
 							<%=news.getNews_id()%>
 						</td>
 						<td class="col-md-4"><a

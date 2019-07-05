@@ -24,7 +24,7 @@
 </head>
 <body>
     <div class="container-fluid">
-        <diV class="col-md-11 col-center-block">
+        <diV class="col-md-11 col-center-block" style="border: 2px solid #616dff;">
         <!-- 页眉 -->
         <div class="row top">
             <%@include file="top.jsp"%>
